@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, send_from_directory
 import os
-import gen
 import traceback
 import random
 
@@ -33,5 +32,5 @@ def get_image(filename):
 if __name__ == '__main__':
     if not os.path.exists(UPLOAD_FOLDER):
         os.makedirs(UPLOAD_FOLDER)
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True)
 
