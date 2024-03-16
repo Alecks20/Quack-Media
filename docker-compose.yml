@@ -9,3 +9,5 @@ services:
     container_name: cloudy_media
     ports:
       - "5000:5000"
+    volumes:
+      - ./library:/app/library
