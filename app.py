@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-UPLOAD_FOLDER = 'library'
+UPLOAD_FOLDER = './library'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 AUTH_KEY = os.environ["AUTH_KEY"]
 
