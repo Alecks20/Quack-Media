@@ -10,6 +10,10 @@ UPLOAD_FOLDER = './library'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 AUTH_KEY = os.environ["AUTH_KEY"]
 
+@app.route("/")
+def index():
+    return "This server is used to host media uploaded to the Cloudy discord bot. Any inquiries / Support: https://discord.gg/pMCqSMjj4z"
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
   try:
