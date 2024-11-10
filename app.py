@@ -8,11 +8,11 @@ load_dotenv()
 app = Flask(__name__)
 UPLOAD_FOLDER = './library'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-AUTH_KEY = os.environ["AUTH_KEY"]
+AUTH_KEY = os.environ["MEDIA_AUTH_KEY"]
 
 @app.route("/")
 def index():
-    return "This server is used to host media uploaded to the Cloudy discord bot. Any inquiries / Support: https://discord.gg/pMCqSMjj4z"
+    return jsonify({"Healthcheck":"Stable"})
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -42,5 +42,5 @@ def get_image(filename):
 if __name__ == '__main__':
     if not os.path.exists(UPLOAD_FOLDER):
         os.makedirs(UPLOAD_FOLDER)
-    app.run(host="0.0.0.0",debug=True)
+    app.run(host="0.0.0.0",port=80,debug=True)
 
